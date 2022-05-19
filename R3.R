@@ -1,8 +1,8 @@
-#????3-1??????ֵnumeric,????integer,????complex
-#????3-2??levels
-#????3-3????as.numeric????
-#????3-4??summary,head,attributes
-#????3-5:rm????
+#问题3-1浮点值，整数，复数
+#问题3-2levels函数
+#3-3利用特定的as*函数as.numeric
+#3-4view(),attributes(),sample()...
+#3-5使用rm函数
 class(Inf)#查找类
 class(NA)#查找类
 class(NaN)#查找类
@@ -86,3 +86,12 @@ groups<-cut(
   include.lowest = TRUE,
   right=FALSE)#将square_numbers中的值切割,变为十组
 split(square_numbers,groups)#把square_numbers和groups合成一个列表
+#练习5-2
+iris
+iris_numeric<-iris[1:150,-5]#选取iris中的前四列
+colMeans(iris_numeric)#计算各列的平均值
+#练习5-3
+beaver1$id<-1#添加id列值全为1
+beaver2$id<-2#添加id列值全为2
+both_beavers<-rbind(beaver1, beaver2)#拼接beaver1和beaver2
+subset(both_beavers, as.logical(activ))#所有活跃着的海狸的子集
